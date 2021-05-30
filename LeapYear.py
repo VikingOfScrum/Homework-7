@@ -1,7 +1,9 @@
 #Simple Program check if a year is a leap year or not
 def isLeapYear(inputYear):
     inputYear = int(inputYear)
-    if inputYear %4 == 0:
+    if inputYear %100 == 0:
+        return("is not a Leap Year")
+    elif inputYear %4 == 0:
         return("is a Leap Year")
     else:
         return("is not a Leap Year")
