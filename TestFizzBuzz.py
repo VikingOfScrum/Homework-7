@@ -1,8 +1,9 @@
 import pytest
 import FizzBuzz
 
+FB = FizzBuzz
 #Setting up first test to check that Fizz is a given correctly for integers divisable by 3 in values from 1 to 100
-@pytest.mark.parametrize("integer, expectFizz", [
+@pytest.mark.parametrize("integer3, expectFizz", [
     (3, "Fizz"),
     (6, "Fizz"),
     (9, "Fizz"),
@@ -32,5 +33,27 @@ import FizzBuzz
     (99, "Fizz")
 ])
 
-def test_check_for_div_3(integer, expectFizz):
-    result = 
+def test_check_for_div_3(integer3, expectFizz):
+    result = FB.checkNumber(integer3)
+    assert result == expectFizz
+
+@pytest.mark.parametrize("integer5, expectBuzz", [
+    (5, "Buzz"),
+    (10, "Buzz"),
+    (20, "Buzz"),
+    (25, "Buzz"),
+    (35, "Buzz"),
+    (40, "Buzz"),
+    (50, "Buzz"),
+    (55, "Buzz"),
+    (65, "Buzz"),
+    (70, "Buzz"),
+    (80, "Buzz"),
+    (85, "Buzz"),
+    (95, "Buzz"),
+    (100, "Buzz")
+])
+
+def test_check_for_div_5(integer5, expectBuzz):
+    result = FB.checkNumber(integer5)
+    assert result == expectBuzz
