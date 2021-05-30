@@ -43,3 +43,17 @@ def test_div_by_4(year4, expected):
 def test_div_by_100(year100, expected100):
     result = LY.isLeapYear(year100)
     assert result == expected100
+
+#Third test if a year is divisable by 400 it is also a leap year
+@pytest.mark.parametrize("year400, expected400", [
+    (400, "is a Leap Year"),
+    (800, "is a Leap Year"),
+    (1200, "is a Leap Year"),
+    (1600, "is a Leap Year"),
+    (2000, "is a Leap Year"),
+    (2400, "is a Leap Year")
+])
+
+def test_div_by_400(year400, expected400):
+    result = LY.isLeapYear(year400)
+    assert result == expected400
